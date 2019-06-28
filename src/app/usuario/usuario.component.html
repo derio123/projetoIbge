@@ -1,0 +1,20 @@
+<table border="1" class="ui-md">
+    <tr class="ui-md-8 ui-md-nopad">
+        <th class="ui-md-4">
+            Nome
+        </th>
+        <th class="ui-md-4">
+            Email
+        </th>
+    </tr>
+    <tr class="ui-md-8 ui-md-nopad" *ngFor="let usuario of usuarios">
+        <td class="ui-md-4">
+            {{usuario.nome}}
+        </td>
+        <td class="ui-md-4">
+            {{usuario.email}}
+        </td>
+    </tr>
+</table>
+
+<button pButton type="button" routerLink="add" label="Add"></button>

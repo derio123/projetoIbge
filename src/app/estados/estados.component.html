@@ -1,0 +1,26 @@
+<table border="1" class="ui-md">
+    <tr class="ui-md-8 ui-md-nopad">
+        <th class="ui-md-4">
+            ID
+        </th>
+        <th class="ui-md-4">
+            Sigla
+        </th>
+        <th class="ui-md-4">
+            Nome
+        </th>
+    </tr>
+    <tr class="ui-md-8 ui-md-nopad" *ngFor="let estado of estados">
+        <td class="ui-md-4">
+            {{estado.id}}
+        </td>
+        <td class="ui-md-4">
+            {{estado.sigla}}
+        </td>
+        <td class="ui-md-4">
+            {{estado.nome}}
+        </td>
+    </tr>
+</table>
+
+<button pButton type="button" label="Add" routerLink="add"></button>
