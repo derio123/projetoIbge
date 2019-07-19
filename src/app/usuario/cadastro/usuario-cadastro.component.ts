@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/models/usuario';
+import { ConnectionService } from 'src/app/services/connection.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-usuario-cadastro',
@@ -8,15 +10,23 @@ import { Usuario } from 'src/app/models/usuario';
 })
 export class UsuarioCadastroComponent implements OnInit {
 
-    public user: Usuario = new Usuario();
-  constructor() { }
+  public usuario: Usuario = new Usuario();
+  constructor(private userServe: ConnectionService, private route: Router) { }
 
-  ngOnInit() {  }
+  ngOnInit() { }
 
   /*salvar()*/
   public salvar() {
-      console.log(this.user);
-      alert('Salvo com sucesso');
+    this.userServe.salvar(this.usuario).subscribe(
+      response => {
+        alert('Salvo com sucesso!!');
+        this.route.navigateByUrl('/usuario')
+        return response;
+      },
+      error => {
+        alert('Aconteceu um erro!!')
+      }
+    )
   }
 
 }

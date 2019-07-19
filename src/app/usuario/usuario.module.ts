@@ -6,6 +6,7 @@ import { UsuarioCadastroComponent } from './cadastro/usuario-cadastro.component'
 import { FormsModule } from '@angular/forms';
 import {ButtonModule} from 'primeng/button';
 import {InputTextModule} from 'primeng/inputtext';
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
 
 @NgModule({
   declarations: [UsuarioComponent, UsuarioCadastroComponent],
@@ -14,7 +15,8 @@ import {InputTextModule} from 'primeng/inputtext';
     UsuarioRoutingModule,
     FormsModule,
     ButtonModule,
-    InputTextModule
+    InputTextModule,
+    ConfirmDialogModule
   ]
 })
 export class UsuarioModule { }

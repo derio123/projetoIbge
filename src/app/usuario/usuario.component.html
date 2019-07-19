@@ -6,6 +6,9 @@
         <th class="ui-md-4">
             Email
         </th>
+        <th class="ui-md-4">
+            Ações
+        </th>
     </tr>
     <tr class="ui-md-8 ui-md-nopad" *ngFor="let usuario of usuarios">
         <td class="ui-md-4">
@@ -14,7 +17,18 @@
         <td class="ui-md-4">
             {{usuario.email}}
         </td>
+        <td class="ui-md-4">
+            <button pButton type="button" (click)="Excluir(usuario.id)" label="Excluir" class="ui-button-danger">
+            </button>
+        </td>
     </tr>
 </table>
 
 <button pButton type="button" routerLink="add" label="Add"></button>
+
+<p-confirmDialog #cd header="Atenção" icon="pi pi-exclamation-triangle">
+    <p-footer>
+        <button type="button" pButton icon="pi pi-times" label="Não" (click)="cd.reject()"></button>
+        <button type="button" pButton icon="pi pi-check" label="Sim" (click)="cd.accept()"></button>
+    </p-footer>
+</p-confirmDialog>

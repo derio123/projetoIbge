@@ -51,6 +51,12 @@
                                 "maximumWarning": "2mb",
                                 "maximumError": "5mb"
                             }]
+                        },
+                        "hmg":{
+                            "fileReplacements": [{
+                                "replace": "src/environments/environment.ts",
+                                "with": "src/environments/environment.hmg.ts"
+                            }]
                         }
                     }
                 },
@@ -62,6 +68,9 @@
                     "configurations": {
                         "production": {
                             "browserTarget": "projetoIbge:build:production"
+                        },
+                        "hmg": {
+                            "browserTarget": "projetoIbge:build:hmg"
                         }
                     }
                 },
